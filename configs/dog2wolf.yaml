@@ -1,0 +1,39 @@
+# logger options
+logger:
+
+
+
+
+# encoder options
+modalities_encoder:
+  epochs: 600
+  batch_size: 256
+  lr: 0.003
+  out_dim: 256
+  color_jitter_strenght: 1
+  loss:
+    temperature: 0.5
+    use_cosine_similarity: True
+  augmentations:
+    - crop
+    - horizontal_flip
+    - color_jitter
+    - grayscale
+    - blur
+
+# modalities options
+
+
+
+
+# GAN options
+
+
+
+
+# data options
+data:
+  crop_image_height: 128
+  crop_image_width: 128
+  train_root: './datasets/Dog2Cat/train'
+  test_root: './datasets/Dog2Cat/test'
