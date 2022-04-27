@@ -24,7 +24,3 @@ class Photo2Monet(Dataset):
 
     def __len__(self):
         return len(self.img_paths)
-
-
-
-

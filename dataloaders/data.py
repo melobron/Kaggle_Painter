@@ -4,6 +4,8 @@ from torch.utils.data.sampler import SubsetRandomSampler
 
 from utils import *
 
+import cv2
+
 
 class ModalityDataset(Dataset):
     def __init__(self, root, transform=None):

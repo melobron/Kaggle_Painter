@@ -1,25 +1,28 @@
 # logger options
 logger:
-
+  checkpoint_dir: './checkpoints/'
+  log_loss: 1                                 # How often do you want to log the training stats
 
 
 
 # encoder options
 modalities_encoder:
-  epochs: 600
-  batch_size: 256
-  lr: 0.003
-  out_dim: 256
-  color_jitter_strenght: 1
+  epochs: 600                                 # How many epochs to perform when training the encoder
+  batch_size: 256                             # Batch size when training the encoder
+  lr: 0.0003                                  # Learning rate of the encoder
+  out_dim: 256                                # Dimension of the representation that is computed by the projection head
+  color_jitter_strenght: 1                    # Strength of the color jittering when color distortion is one of the augmentations
+  weight_decay: 0.000001                      # Weight decay of the encoder
   loss:
-    temperature: 0.5
-    use_cosine_similarity: True
-  augmentations:
+    temperature: 0.5                          # Temperature for the NTXentLoss
+    use_cosine_similarity: True               # Use cosine similarity in the NTXentLoss
+  augmentations:                              # The augmentations that should be used when training the encoder. The options are: crop, horizontal_flip, shuffle, color_jitter, gray_scale, blur.
     - crop
     - horizontal_flip
     - color_jitter
     - grayscale
     - blur
+
 
 # modalities options
 
